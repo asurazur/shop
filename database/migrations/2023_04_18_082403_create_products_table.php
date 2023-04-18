@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger("user_id");
             $table->string("product_name");
             $table->float("price");
-            $table->string("img");
+            $table->string("img")->nullable;
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
